@@ -37,4 +37,4 @@ Las clases existentes en este proyecto son:
 
 Para comenzar con el proyecto es necesario usar el seed con algunos datos de ejemplo.
 
-![alt text](https://www.dropbox.com/s/brhzpm97jnhyyo6/welcome_screen.PNG?dl=0)
+![alt text](https://image.ibb.co/eCNJm6/welcome_screen.png)
