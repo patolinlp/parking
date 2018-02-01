@@ -1,0 +1,14 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Editar Tipo de Vehículo</h4>
+        </div>
+        <div class="card-content">
+        	<%= render 'form', vehicle_type: @vehicle_type %>
+        </div>
+    </div>
+</div>
+
+
+<%= link_to 'Ver', @vehicle_type %> |
+<%= link_to 'Volver', vehicle_types_path %>

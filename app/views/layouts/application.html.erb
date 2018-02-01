@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parking</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+  	<div class="wrapper">
+        <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+            <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Estacionamiento
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <ul class="nav">
+                    <li class="active">
+                        <a href=<%= root_path %>>
+                            <i class="material-icons">dashboard</i>
+                            <p>Inicio</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=<%= vehicle_types_path %>>
+                            <i class="material-icons">directions_car</i>
+                            <p>Tipos de Vehículos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=<%= slots_path %>>
+                            <i class="material-icons">explicit</i>
+                            <p>Espacios</p>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <%= yield %>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+
+
+
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>
+</html>

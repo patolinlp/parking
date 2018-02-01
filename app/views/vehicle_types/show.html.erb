@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Ver tipo de Vehículo</h4>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Nombre Tipo</span><%= @vehicle_type.name %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%= link_to 'Editar', edit_vehicle_type_path(@vehicle_type) %> |
+<%= link_to 'Volver', vehicle_types_path %>

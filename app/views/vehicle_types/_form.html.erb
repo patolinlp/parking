@@ -1,0 +1,26 @@
+<%= form_for(vehicle_type) do |f| %>
+  <% if vehicle_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle_type.errors.count, "error") %> prohibited this vehicle_type from being saved:</h2>
+
+      <ul>
+      <% vehicle_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+      <div class="col-md-12">
+          <div class="form-group label-floating">
+              <label class="control-label">Nombre del tipo de vehículo</label>
+              <%= f.text_field :name, :class => "form-control"%>
+          </div>
+      </div>
+  </div>
+  <%= f.submit "Crear Tipo Vehículo",:class => "btn btn-primary pull-right" %>
+  <div class="clearfix"></div>
+  
+  
+<% end %>

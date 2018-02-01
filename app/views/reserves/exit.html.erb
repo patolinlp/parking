@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Ver Espacio</h4>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Número del Espacio</span><%= @reserf.slot.number %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Patente</span><%= @reserf.vehicle.patente %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Hora de Entrada</span><%= @reserf.initTime %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Hora de Salida</span><%= @reserf.exitTime %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Tiempo Total</span><%= @reserf.totalTime %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Precio Total</span>$<%= @reserf.price %></p>
+                </div>
+            </div>
+        </div>
+
+        <%= link_to 'Pantalla Principal', root_path, :class => "btn btn-primary pull-left"%>
+        <%= link_to 'Imprimir Ticket', pdf_reserve_path(@reserf, format: 'pdf'), :class => "btn btn-primary pull-right" %>
+        
+    </div>
+</div>

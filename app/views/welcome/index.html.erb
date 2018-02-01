@@ -1,0 +1,37 @@
+<% @slots.each do |slot| %>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card card-stats">
+            <% reserve = Reserve.reservaActual(slot.id) %>
+            <% if reserve != nil && reserve.busy %>
+                <div class="card-header" data-background-color="red">
+                    <i class="material-icons">directions_car</i> <%= slot.number %>
+                </div>
+                <div class="card-content">
+                    <p class="category">Ocupado por: <b><%= reserve.vehicle.patente %></b></p>
+                    <h3 class="title">
+                        <small><%= reserve.tiempoTranscurrido %> minutos</small>
+                    </h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a href=<%= exit_reserve_path(reserve) %> class="btn btn-danger btn-sm">Salida de vehículo</a>
+                    </div>
+                </div>
+            <% else %>
+                <div class="card-header" data-background-color="green">
+                    <i class="material-icons">directions_car</i> <%= slot.number %>
+                </div>
+                <div class="card-content">
+                    <p class="category">Espacio para: </p>
+                    <h3 class="title"><small><%= slot.vehicle_type.name %></small></h3>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <a href=<%= new_reserf_path(slot.id) %> class="btn btn-success btn-sm">Ingresar vehículo</a>
+                    </div>
+                </div>
+
+            <% end %>
+        </div>
+    </div>
+<% end %>

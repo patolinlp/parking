@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="card">
+      <div class="card-header" data-background-color="purple">
+          <h4 class="title">Tipos de Vehículos</h4>
+          <p class="category">Tabla con todos los tipos de vehículos</p>
+      </div>
+      <div class="card-content table-responsive">
+          <table class="table">
+              <thead class="text-primary">
+                  <th>Nombre Tipo</th>
+                  <th></th>
+              </thead>
+              <tbody>
+                <% @vehicle_types.each do |vehicle_type| %>
+                  <tr>
+                    <td><%= vehicle_type.name %></td>
+                    <td><%= link_to 'Ver', vehicle_type %> |
+                    <%= link_to 'Editar', edit_vehicle_type_path(vehicle_type) %> |
+                    <%= link_to 'Eliminar', vehicle_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  
+  <%= link_to 'Nuevo Tipo de Vehículo', new_vehicle_type_path, :class => "btn btn-primary pull-right" %>
+  <div class="clearfix"></div>
+</div>
+

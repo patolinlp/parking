@@ -1,0 +1,13 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Nueva Reserva de espacio</h4>
+            <p class="category">Ingreso de vehículo en el Espacio: <%= @reserf.slot.number %></p>
+        </div>
+        <div class="card-content">
+        	<%= render 'form', reserf: @reserf %>
+        </div>
+    </div>
+</div>
+
+<%= link_to 'Volver', root_path %>

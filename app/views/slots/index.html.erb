@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-12">
+  <div class="card">
+      <div class="card-header" data-background-color="purple">
+          <h4 class="title">Espacio</h4>
+          <p class="category">Tabla con todos los espacios del estacionamiento</p>
+      </div>
+      <div class="card-content table-responsive">
+          <table class="table">
+              <thead class="text-primary">
+                  <th>Número de Slot</th>
+                  <th>Tipo de Vehículo</th>
+                  <th></th>
+              </thead>
+              <tbody>
+                  <% @slots.each do |slot| %>
+                    <tr>
+                      <td><%= slot.number %></td>
+                      <td><%= slot.vehicle_type.name %></td>
+                      <td><%= link_to 'Ver', slot %> |
+                      <%= link_to 'Editar', edit_slot_path(slot) %> |
+                      <%= link_to 'Eliminar', slot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  <% end %>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  
+  <%= link_to 'Nuevo Espacio', new_slot_path, :class => "btn btn-primary pull-right" %>
+  <div class="clearfix"></div>
+</div>
+

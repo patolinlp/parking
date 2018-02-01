@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" data-background-color="purple">
+            <h4 class="title">Ver Espacio</h4>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Número</span><%= @slot.number %></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-content">    
+            <div class="row">
+                <div class="tim-typo">
+                    <p>
+                        <span class="tim-note">Tipo de vehículo</span><%= @slot.vehicle_type.name %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= link_to 'Editar', edit_slot_path(@slot) %> |
+<%= link_to 'Volver', slots_path %>
